@@ -1,0 +1,89 @@
+/* This makes the whole page center its content */
+body {
+    /* You can change this background color! */
+    /* This is a soft pink */
+    background-color: #fce4ec; 
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    
+    /* This centers the box vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make sure it's full-screen */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* This is the clickable box */
+#click-box {
+    /* A bright, lovely pink */
+    background-color: #e91e63; 
+    color: white;
+    padding: 40px 60px;
+    border-radius: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    /* This makes the mouse turn into a hand */
+    cursor: pointer; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    
+    /* A little "throb" animation to encourage clicking */
+    animation: pulse 2s infinite;
+}
+
+/* This is the content that will "pop out" */
+#main-content {
+    /* It's hidden by default! */
+    display: none;
+    
+    /* This animation will make it fade in and scale up */
+    animation: pop-in 0.7s ease-out;
+}
+
+/* This styles the "I MISS YOU" H1 text */
+#main-content h1 {
+    font-size: 4.5em;
+    font-weight: bold;
+    /* A darker pink for the text */
+    color: #d81b60; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* This is the container for your photos */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Lets images stack on small screens */
+    justify-content: center;
+    gap: 20px; /* Space between photos */
+    margin-top: 30px;
+}
+
+/* This styles each individual photo */
+.gallery img {
+    max-width: 350px;
+    /* A clean white border */
+    border: 8px solid #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for the "pop-in" effect */
+@keyframes pop-in {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation for the pulsing box */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
