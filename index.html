@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message For You</title>
+    
+    <!-- This links your new style.css file to this HTML file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- This is the "small box" she will click first -->
+    <!-- You can change the text inside! -->
+    <div id="click-box">
+        🎁 A Surprise For You...
+    </div>
+
+    <!-- 
+      This is all your content, hidden at first.
+      The CSS "display: none;" is what hides it.
+    -->
+    <div id="main-content">
+
+        <!-- This is the main message -->
+        <h1>I MISS YOU!</h1>
+
+        <!-- This is your photo gallery -->
+        <div class="gallery">
+            
+            <!-- 
+              VVV IMPORTANT VVV
+              Change "photo1.jpg" to the exact filename of your picture.
+              Make sure the extension (.jpg, .png, etc.) is correct!
+            -->
+            <img src="photo1.jpg" alt="A special moment with you">
+            
+            <!-- Add more photos by copying the line above -->
+            <img src="photo2.png" alt="Your beautiful smile">
+            
+            <img src="photo3.jpg" alt="A fun memory">
+
+            <!-- Add as many as you like! -->
+
+        </div>
+    </div>
+
+
+    <!-- This JavaScript is the "magic" that makes it work -->
+    <script>
+        // Find the clickable box by its ID
+        const clickBox = document.getElementById('click-box');
+        
+        // Find the hidden content by its ID
+        const mainContent = document.getElementById('main-content');
+
+        // Wait for her to click the box
+        clickBox.onclick = function() {
+            // When she clicks:
+            // 1. Hide the box
+            clickBox.style.display = 'none';
+            
+            // 2. Show the "I miss you" content
+            // The CSS animation "pop-in" will automatically play
+            mainContent.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
